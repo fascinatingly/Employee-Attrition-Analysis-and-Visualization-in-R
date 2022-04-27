@@ -13,31 +13,31 @@ _Analysis 1.1:_ length of service by job title.
 
 Starting off, average length\_of\_service by job\_title is examined:
 
-![](RackMultipart20220427-1-mflwnv_html_85b07c6e7002f649.png)
+![image](https://user-images.githubusercontent.com/102264544/165544664-a1638c52-51ab-4a36-8b0c-b0ec0b2d0999.png)
 
-![](RackMultipart20220427-1-mflwnv_html_18b335282bb04b4f.png)
+![image](https://user-images.githubusercontent.com/102264544/165544723-60b1f7b1-b30f-453a-9eaa-2d39b79d07f9.png)
 
 What can be seen from this is that cashiers, shelf stockers, diary people and bakers have the significantly shorter length of service in comparison to Vancouver-specific jobs which have 19 years of service or more on average.
 
 Next, the same tibble is generated except without observations from Vancouver to see the average length of service in cities outside Vancouver and also to see whether average length of service for the Vancouver-unexclusive jobs is higher in Vancouver than outside Vancouver. This tibble will show outside Vancouver only for just the jobs outside Vancouver:
 
-![](RackMultipart20220427-1-mflwnv_html_25a8a9dfe36820b.png)
+![image](RackMultipart20220427-1-mflwnv_html_25a8a9dfe36820b.png)
 
-![](RackMultipart20220427-1-mflwnv_html_c23ac1a7bb566d1a.png)
+![image](RackMultipart20220427-1-mflwnv_html_c23ac1a7bb566d1a.png)
 
 Cashier, shelf stocker and diary person show shorter length of service by around 1 in comparison. The jobs following baker show no significant difference. Overall, with and without Vancouver data, these three jobs show significantly less (almost three times less in the case of cashiers) length of service in comparison to Vancouver-specific jobs.
 
 This very same process is also visualized in ggplot2 graphs and reiterated:
 
-![](RackMultipart20220427-1-mflwnv_html_7e91b6ea7b32ae23.png)
+![image](RackMultipart20220427-1-mflwnv_html_7e91b6ea7b32ae23.png)
 
-![](RackMultipart20220427-1-mflwnv_html_14ff34d4f8b9f3b.png)
+![image](RackMultipart20220427-1-mflwnv_html_14ff34d4f8b9f3b.png)
 
 Here is the same graph but without Vancouver&#39;s records to see if how different the average length of service is without Vancouver. As previously seen in the table, the 3 jobs lowest in length of service have even less values than with Vancouver&#39;s records which means that employees in these jobs stay longer in Vancouver than in other cities.
 
-![](RackMultipart20220427-1-mflwnv_html_f9e0c6b2303fa796.png)
+![image](RackMultipart20220427-1-mflwnv_html_f9e0c6b2303fa796.png)
 
-![](RackMultipart20220427-1-mflwnv_html_2133f3bd230a579d.png)
+![image](RackMultipart20220427-1-mflwnv_html_2133f3bd230a579d.png)
 
 It is clear from both graphs that cashier, shelf stocker, diary person, and baker all have significantly less average length of service than other jobs. This can be attributed to often having generally low growth in job prospects and career outlook working in these positions. If paired with high resignation from these four jobs, it is highly likely that there are reasons behind employees resigning from these jobs. HR can attempt to uncover and address these resignation reasons.
 
@@ -60,15 +60,15 @@ What is crystal-clear from this data is that many jobs and positions simply are 
 
 First and foremost, following up on the first analysis&#39;s findings before diving into this analysis, this is how much termination there is in the four job titles with lowest average length of service:
 
-![](RackMultipart20220427-1-mflwnv_html_58f7cf444e5e6258.png)
+![image](RackMultipart20220427-1-mflwnv_html_58f7cf444e5e6258.png)
 
-![](RackMultipart20220427-1-mflwnv_html_3eb1022007942ce.png)
+![image](RackMultipart20220427-1-mflwnv_html_3eb1022007942ce.png)
 
 More dairy people and bakers seem to be retiring than being laid off. However, not a single resignation was made by employees from these jobs. This means there isn&#39;t something HR can address to lessen termination in the case of these four jobs. Nevertheless, employees often need to be replaced. As long as turnover occurs, a store can continue on running. However, the next table highlights something important.
 
-![](RackMultipart20220427-1-mflwnv_html_625d70d300f69cf8.png)
+![image](RackMultipart20220427-1-mflwnv_html_625d70d300f69cf8.png)
 
-![](RackMultipart20220427-1-mflwnv_html_5b8a69741824b59b.png)
+![image](RackMultipart20220427-1-mflwnv_html_5b8a69741824b59b.png)
 
 This table has 471 rows and 11 columns. It is rather data-rich. This table showcases a plethora of stores and cities wherein jobs are left vacant upon retirement. 100% termination rate; 0 active employees for a series of jobs.
 
@@ -78,17 +78,17 @@ What HR can do is go over this particular table in descending order by terminati
 
 To check how the percentage of remaining employees regardless of job title by city and store; to see whether or not there are stores or even cities where there are no longer any active employees:
 
-![](RackMultipart20220427-1-mflwnv_html_3cf846916d3b2369.png)
+![image](RackMultipart20220427-1-mflwnv_html_3cf846916d3b2369.png)
 
-![](RackMultipart20220427-1-mflwnv_html_9ecd531eda5a69d.png)
+![image](RackMultipart20220427-1-mflwnv_html_9ecd531eda5a69d.png)
 
 Attempting to visualize all of either this or the next tibble&#39;s data in a plot could be reductionist if not done right to the very data-intensive nature of this analysis due to the sheer number of categorical variables intentionally put in these tables. These tables are information-savvy and more actionable in terms of accurate numbers for HR to utilize. A plot would require much faceting. It allows dealing with all of the data concurrently. Despite not visualized, the same conclusions and patterns are easily discernable all together in a singular table with arrange() and group\_by(). On the contrary, smaller numbers in the same comparison would be completely overshadowed and one would have to make the effort to get them into their own plot away from larger numbers just to visualize. The tibbles easily solved this. termreason\_desc, the four possible termination reasons can be compared by job title, but we can&#39;t have individual comparisons with the smaller values such as CEO and other Vancouver-exclusive jobs with 1 or very few employees. ![](RackMultipart20220427-1-mflwnv_html_c77a542ae2b648d0.png)
 
-![](RackMultipart20220427-1-mflwnv_html_4e68f9803b92d305.png)
+![image](RackMultipart20220427-1-mflwnv_html_4e68f9803b92d305.png)
 
 The sheer number of possible job titles prevent the ability to position\_dodge() termreason\_desc instead of faceting by termreason\_desc.) As seen in the plot below, facets drastically hinder the possibility of comparing termreason\_desc by job\_title. Even still, larger values such as meat cutters and cashiers shorten the bars of the other job titles. It is for these reasons and the data frames&#39; quick and easy fix to these issues that they were used and recommended for analysis as opposed to these two plots. Plotting is still usable in any case but in this case, time-wise and effort-wise, the tibbles reign supreme. (After future improvement in data visualization in R with ggplot2, I have come to realize that, while 1 tibble still remains more information-driven than 3 separate graphs, using position\_fill() instead of position\_dodge() as it would show the ratios between percentages effectively. Both plots and tables work) As aforementioned, HR can use the tibbles to clearly identify what to address in the future when possible in terms of turnover and which positions to prioritize refilling as soon as possible.
 
-![](RackMultipart20220427-1-mflwnv_html_12e8f8176e6ea4ea.png)
+![image](RackMultipart20220427-1-mflwnv_html_12e8f8176e6ea4ea.png)
 
 **Question 2:**
 
@@ -96,17 +96,17 @@ What potentially helpful, actionable conclusions can be drawn from the relations
 
 _Analysis 1:_
 
-![](RackMultipart20220427-1-mflwnv_html_41c7e89c2ca7ffdf.png)
+![image](RackMultipart20220427-1-mflwnv_html_41c7e89c2ca7ffdf.png)
 
-![](RackMultipart20220427-1-mflwnv_html_87eb7b48143f2bf1.png)
+![image](RackMultipart20220427-1-mflwnv_html_87eb7b48143f2bf1.png)
 
 From this graph, we can see that women are noticeably more likely to resign than men.
 
 The exact resignation ratio is derived as follows:
 
-![](RackMultipart20220427-1-mflwnv_html_f2d8dfc2e48a64eb.png)
+![image](RackMultipart20220427-1-mflwnv_html_f2d8dfc2e48a64eb.png)
 
-![](RackMultipart20220427-1-mflwnv_html_10f51d1d3c6585c6.png)
+![image](RackMultipart20220427-1-mflwnv_html_10f51d1d3c6585c6.png)
 
 Women are 21% more likely to resign than men.
 
@@ -114,15 +114,15 @@ A possible reason – out of many – for this is the unavailability of maternit
 
 Another reason could be the nature of the job itself being a reason. A good example of this is how a number of job titles have more men employed than women:
 
-![](RackMultipart20220427-1-mflwnv_html_857a85801197b881.png) ![](RackMultipart20220427-1-mflwnv_html_cecd9431529e1a17.png)
+![image](RackMultipart20220427-1-mflwnv_html_857a85801197b881.png) ![](RackMultipart20220427-1-mflwnv_html_cecd9431529e1a17.png)
 
 This is the position\_stack() version.
 
-![](RackMultipart20220427-1-mflwnv_html_539f6d397be3f95b.png)
+![image](RackMultipart20220427-1-mflwnv_html_539f6d397be3f95b.png)
 
 This is the position\_dodge() version.
 
-![](RackMultipart20220427-1-mflwnv_html_7305660f06e0e6a3.png)
+![image](RackMultipart20220427-1-mflwnv_html_7305660f06e0e6a3.png)
 
 This is the position\_fill() version.
 
@@ -132,9 +132,9 @@ From these plots, we can see that it is actually not the case that a certain job
 
 The next plot will be used as analysis material for both this question and the question that follows because it is very relevant to managerial positions as well as this question. To keep the focus on non-Vancouver jobs which usually have only 1 employee without excluding records of employees in Vancouver that work in jobs unexclusive to Vancouver:
 
-![](RackMultipart20220427-1-mflwnv_html_6e0378178e59145c.png)
+![image](RackMultipart20220427-1-mflwnv_html_6e0378178e59145c.png)
 
-![](RackMultipart20220427-1-mflwnv_html_5d3861e7d9898781.png)
+![image](RackMultipart20220427-1-mflwnv_html_5d3861e7d9898781.png)
 
 In a number of managerial jobs, more female managers retire than male managers. Retirement is essentially due to age, not gender, so gender differences in retirement are to be ignored. In the case of resignation, more female dairy people resign than males, but the most noticeable case of higher female than male resignation is in the shelf stocker facet, the same job that is more predominantly male. In order to reduce turnover, the company may benefit from employing more employing more male shelf stockers than females in the future, as they resign less.
 
