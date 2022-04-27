@@ -3,7 +3,7 @@ Data analysis of employee attrition dataset using R (preprocessing, validation, 
 
 
 
-# Data Exploration, and Visualization Results:
+# Data Exploration and Visualization Results:
 
 **Question 1:**
 
